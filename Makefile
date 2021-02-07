@@ -4,7 +4,8 @@ SRCDIR = $(PWD)
 SRCDIR = $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 # Armbian Kernel Directory
 #KDIR = /usr/src/linux-headers-5.9.14-sunxi64/
-KDIR = /usr/src/linux-headers-$(shell uname -r)/
+#KDIR = /usr/src/linux-headers-$(shell uname -r)/
+KDIR=$(MYKERNEL)
 all:
 	$(MAKE) -C $(KDIR) M=$(SRCDIR) modules
 clean:
